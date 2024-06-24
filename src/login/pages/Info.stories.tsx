@@ -1,0 +1,51 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import { createKcPageStory } from "../KcPageStory";
+
+const { KcPageStory } = createKcPageStory({ pageId: "info.ftl" });
+
+const meta = {
+    title: "login/info.ftl",
+    component: KcPageStory
+} satisfies Meta<typeof KcPageStory>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                message: {
+                    summary: "Server info message"
+                }
+            }}
+        />
+    )
+};
+
+export const WithLinkBack: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                message: {
+                    summary: "Server message"
+                },
+                actionUri: undefined
+            }}
+        />
+    )
+};
+
+export const WithRequiredActions: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                message: {
+                    summary: "Server message"
+                },
+                requiredActions: ["CONFIGURE_TOTP", "UPDATE_PROFILE", "VERIFY_EMAIL"]
+            }}
+        />
+    )
+};

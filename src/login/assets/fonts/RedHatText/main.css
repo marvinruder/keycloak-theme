@@ -1,0 +1,27 @@
+@font-face {
+    font-family: RedHatText;
+    font-style: normal;
+    font-weight: 300;
+    src: url(./RedHatText-Light.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: RedHatText;
+    font-style: normal;
+    font-weight: 400;
+    src: url(./RedHatText-Regular.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: RedHatText;
+    font-style: normal;
+    font-weight: 500;
+    src: url(./RedHatText-Medium.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: RedHatText;
+    font-style: normal;
+    font-weight: 700;
+    src: url(./RedHatText-Bold.woff2) format("woff2")
+}

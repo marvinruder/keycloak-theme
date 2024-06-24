@@ -16,7 +16,6 @@ if (import.meta.env.DEV) {
 */
 
 const KcLoginThemePage = lazy(() => import("./login/KcPage"));
-const KcAccountThemePage = lazy(() => import("./account/KcPage"));
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
@@ -25,8 +24,6 @@ createRoot(document.getElementById("root")!).render(
                 switch (window.kcContext?.themeType) {
                     case "login":
                         return <KcLoginThemePage kcContext={window.kcContext} />;
-                    case "account":
-                        return <KcAccountThemePage kcContext={window.kcContext} />;
                 }
                 return <h1>No Keycloak Context</h1>;
             })()}
@@ -37,7 +34,6 @@ createRoot(document.getElementById("root")!).render(
 declare global {
     interface Window {
         kcContext?:
-            | import("./login/KcContext").KcContext
-            | import("./account/KcContext").KcContext;
+            | import("./login/KcContext").KcContext;
     }
 }
